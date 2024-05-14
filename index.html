@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta tags for character set and viewport -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS styles -->
+  <style>
+    /* Global body styles */
+    body {
+      background-color: #f8f9fa; /* Light gray background */
+      padding: 20px;
+      font-family: Arial, sans-serif; /* Default font family */
+      color: #333; /* Text color */
+    }
+
+    /* Form control styles */
+    .form-control {
+      margin-bottom: 10px;
+    }
+
+    /* Primary button styles */
+    .btn-primary {
+      margin-bottom: 10px;
+      width: 25%; /* Adjust the width as needed */
+    }
+
+    /* Edit and delete button styles */
+    .editButton,
+    .deleteButton {
+      padding: 5px 10px;
+      margin-right: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* Edit button specific styles */
+    .editButton {
+      background-color: #8fd1a0; /* Green background */
+      color: #fff; /* White text color */
+    }
+
+    /* Delete button specific styles */
+    .deleteButton {
+      background-color: #929292; /* Gray background */
+      color: #fff; /* White text color */
+    }
+
+    /* Main title styles */
+    #mainTitle {
+      margin-top: 30px;
+      font-size: 28px; /* Larger title font size */
+      color: #007bff; /* Blue title color */
+    }
+
+    /* Subtitle styles */
+    #subTitle {
+      margin-top: 20px;
+      font-size: 24px; /* Subtitle font size */
+    }
+
+    /* Table styles */
+    table {
+      margin-top: 20px;
+      border-collapse: collapse; /* Collapse table borders */
+      width: 100%; /* Full-width table */
+    }
+
+    /* Table header and cell styles */
+    th, td {
+      border: 1px solid #ddd; /* Light gray border for cells */
+      padding: 8px;
+      text-align: left; /* Align text left in cells */
+    }
+
+    /* Table header styles */
+    th {
+      background-color: #000; /* Black header background */
+      color: #050404e9; /* White text color for header */
+    }
+
+    /* Alternate row background color */
+    tbody tr:nth-child(odd) {
+      background-color: #f2f2f2; /* Light gray alternate row background */
+    }
+
+    /* Hover row background color */
+    tbody tr:hover {
+      background-color: #e9ecef; /* Hover row background */
+    }
+
+    /* Card styles */
+    .card {
+      background-color: #fff; /* White card background */
+      border: 1px solid #ccc; /* Light gray border */
+      border-radius: 5px; /* Rounded corners */
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+  </style>
+  <!-- Title of the webpage -->
+  <title>Movies Review App</title>
+</head>
+<body>
+  <div class="container">
+    <!-- Add Movie Review Card -->
+    <div class="card">
+      <h2 id="subTitle">Add Movie Review</h2>
+      <!-- Form for adding a movie review -->
+      <div class="d-flex mb-2">
+        <input type="text" class="form-control" id="movieName" placeholder="Movie name">
+        <input type="text" class="form-control mx-2" id="directorName" placeholder="Director's name">
+        <input type="date" class="form-control mx-2" id="releaseDate">
+        <select class="form-control mx-2 w-25" id="movieRating">
+          <option value="0">0/5</option>
+          <option value="1">1/5</option>
+          <option value="2">2/5</option>
+          <option value="3">3/5</option>
+          <option value="4">4/5</option>
+          <option value="5">5/5</option>
+        </select>
+        <button type="button" class="btn btn-primary" id="addButton">Add</button>
+      </div>
+    </div>
+ <!-- Dropdown button for sorting -->
+ <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+    Sort by
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="sortDropdown">
+    <li><a class="dropdown-item" href="#" id="sortMovieName">Movie Name</a></li>
+    <li><a class="dropdown-item" href="#" id="sortDirector">Director</a></li>
+    <li><a class="dropdown-item" href="#" id="sortReleaseDate">Release Date</a></li>
+    <li><a class="dropdown-item" href="#" id="sortRating">Rating</a></li>
+  </ul>
+</div>
+    <!-- Main Title -->
+    <h1 id="mainTitle">Movie Reviews</h1>
+    <!-- Table for displaying movie reviews -->
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Movie Name</th>
+          <th scope="col">Director</th>
+          <th scope="col">Release Date</th>
+          <th scope="col">Rating</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody id="reviewList">
+      </tbody>
+    </table>
+  </div>
+ 
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Custom JavaScript -->
+  <script type="module" src="app.js"></script>
+  <!-- Bootstrap JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
